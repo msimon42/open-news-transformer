@@ -28,4 +28,8 @@ class NewsScraperService
     def news_scraper_uri
       'https://www.news-scraper.com'
     end
+
+    def articles_request_endpoint
+      'api/request-articles'
+    end
 end
