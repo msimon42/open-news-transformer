@@ -1,0 +1,3 @@
+class NewsScraperService
+
+end   
