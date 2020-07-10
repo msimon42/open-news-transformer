@@ -1,19 +1,22 @@
 class NewsScraperService
   def request_articles(form_data)
     json_form_data = jsonify_form_data(form_data)
-
-    request = connection.post do |req|
-      req.body = json_form_data
-    end
-
-    JSON.parse(request)
+    make_post_request(articles_request_endpoint, json_form_data)
   end
 
   private
     def connection
-      Faraday.new(articles_request_endpoint) do |f|
+      Faraday.new(news_scraper_url) do |f|
         f.adapter Faraday.default_adapter
       end
+    end
+
+    def make_post_request(endpoint, request_data)
+      request = connection.post(endpoint) do |req|
+        req.body = request_data
+      end
+
+      JSON.parse(request)
     end
 
     def jsonify_form_data(form_data)
@@ -25,7 +28,7 @@ class NewsScraperService
       }.to_json
     end
 
-    def news_scraper_uri
+    def news_scraper_url
       'https://www.news-scraper.com'
     end
 
