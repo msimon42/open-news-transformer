@@ -4,8 +4,9 @@ class NewsScraperService
     make_request(articles_request_endpoint, json_form_data)
   end
 
-  def scrape_articles(link)
-
+  def scrape_articles(form_data)
+    json_form_data = jsonify_form_data(form_data)
+    make_request(scrape_articles_endpoint, json_form_data)
   end
 
   private
