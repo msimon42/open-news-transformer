@@ -4,6 +4,10 @@ class NewsScraperService
     make_post_request(articles_request_endpoint, json_form_data)
   end
 
+  def scrape_articles(link)
+
+  end
+
   private
     def connection
       Faraday.new(news_scraper_url) do |f|
@@ -33,6 +37,6 @@ class NewsScraperService
     end
 
     def articles_request_endpoint
-      'api/request-articles'
+      'api/v1/articles'
     end
 end
