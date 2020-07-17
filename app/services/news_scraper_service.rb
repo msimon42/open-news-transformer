@@ -28,7 +28,7 @@ class NewsScraperService
     end
 
     def news_scraper_url
-      'http://localhost:5000'
+      'https://www.news-scraper.com'
     end
 
     def articles_request_endpoint
