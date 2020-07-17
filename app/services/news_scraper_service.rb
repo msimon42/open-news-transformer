@@ -35,6 +35,6 @@ class NewsScraperService
     end
 
     def scrape_articles_endpoint
-      '/api/v2/scrape-articles'
+      '/api/v1/scrape-articles'
     end
 end
