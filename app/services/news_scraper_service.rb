@@ -15,11 +15,11 @@ class NewsScraperService
       end
     end
 
-    def make_post_request(endpoint, request_data)
-      request = connection.post(endpoint) do |req|
+    def make_request(endpoint, request_data)
+      request = connection.get(endpoint) do |req|
         req.body = request_data
       end
-
+      binding.pry
       JSON.parse(request)
     end
 
@@ -33,7 +33,7 @@ class NewsScraperService
     end
 
     def news_scraper_url
-      'https://www.news-scraper.com'
+      'http://localhost:5000'
     end
 
     def articles_request_endpoint
