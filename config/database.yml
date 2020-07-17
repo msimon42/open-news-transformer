@@ -79,7 +79,4 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: open_news_transformer_production
-  username: open_news_transformer
-  password: <%= ENV['OPEN_NEWS_TRANSFORMER_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
