@@ -19,19 +19,15 @@ class NewsScraperService
       request = connection.post(endpoint) do |req|
         req.body = request_data
       end
-      JSON.parse(request)
+      JSON.parse(request.body)
     end
 
     def jsonify_form_data(form_data)
-      { startDate: form_data['start_date'],
-        endDate: form_data['end_date'],
-        keywords: form_data['keywords'],
-        amount: form_data['amount']
-      }.to_json
+      form_data.to_json
     end
 
     def news_scraper_url
-      'https://www.news-scraper.com'
+      'http://localhost:5000'
     end
 
     def articles_request_endpoint
