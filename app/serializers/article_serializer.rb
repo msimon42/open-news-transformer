@@ -1,0 +1,3 @@
+class ArticleSerializer
+
+end  
