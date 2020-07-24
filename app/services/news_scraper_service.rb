@@ -4,8 +4,9 @@ class NewsScraperService
     make_request(articles_request_endpoint, json_form_data)
   end
 
-  def scrape_articles(link)
-
+  def scrape_articles(form_data)
+    json_form_data = jsonify_form_data(form_data)
+    make_request(scrape_articles_endpoint, json_form_data)
   end
 
   private
@@ -19,15 +20,11 @@ class NewsScraperService
       request = connection.post(endpoint) do |req|
         req.body = request_data
       end
-      JSON.parse(request)
+      JSON.parse(request.body)
     end
 
     def jsonify_form_data(form_data)
-      { startDate: form_data['start_date'],
-        endDate: form_data['end_date'],
-        keywords: form_data['keywords'],
-        amount: form_data['amount']
-      }.to_json
+      form_data.to_json
     end
 
     def news_scraper_url
@@ -39,6 +36,6 @@ class NewsScraperService
     end
 
     def scrape_articles_endpoint
-      '/api/v2/scrape-articles'
+      '/api/v1/scrape-articles'
     end
 end
