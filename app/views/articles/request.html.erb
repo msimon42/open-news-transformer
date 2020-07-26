@@ -1,0 +1,11 @@
+<%= form_with url: '/articles/request' do |form| %>
+<%= form.label :startDate %>
+<%= form.text_field :startDate %>
+<%= form.label :endDate %>
+<%= form.text_field :endDate %>
+<%= form.label :keywords %>
+<%= form.text_field :keywords %>
+<%= form.label :amount %>
+<%= form.text_field :amount %>
+<%= form.submit %>
+<% end %>
