@@ -2,7 +2,8 @@ class ArticlesController < ApplicationController
   def request_form; end
 
   def get_articles
-    @articles = NewsScraperService.new.request_articles(request_articles_params)
+    form_data = send("#{params[:type]}_params".to_sym)
+    @articles = NewsScraperService.new.send(params[:type].to_sym, form_data)
   end
 
   private
