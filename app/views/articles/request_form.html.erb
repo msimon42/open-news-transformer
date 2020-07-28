@@ -7,5 +7,6 @@
   <%= form.text_field :keywords %><br>
   <%= form.label :amount %>
   <%= form.text_field :amount %><br>
+  <%= form.hidden_field :type, value: 'request_articles' %>
   <%= form.submit %>
 <% end %>
