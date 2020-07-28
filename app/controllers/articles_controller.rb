@@ -10,4 +10,8 @@ class ArticlesController < ApplicationController
     def request_articles_params
       params.permit(:startDate, :endDate, :keywords, :amount)
     end
+
+    def scrape_articles_params
+      params.permit(:url)
+    end
 end
