@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'application#index'
 
-  get '/articles/request', to: 'articles#request_form'
-  post '/articles/request', to: 'articles#request'
+  get '/articles-request', to: 'articles#request_form'
+  get '/articles-results', to: 'articles#get_articles'
 end
