@@ -1,0 +1,6 @@
+<%= form_with url: '/articles-results', method: :get, local: true do |form| %>
+  <%= form.label :url %>
+  <%= form.text_field :url %>
+  <%= form.hidden_field :type, value: 'scrape_articles' %>
+  <%= form.submit 'Submit' %>
+<% end %>

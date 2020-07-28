@@ -1,0 +1,12 @@
+<%= form_with url: '/articles-results', method: :get, local: true do |form| %>
+  <%= form.label :startDate, 'Start Date' %>
+  <%= form.text_field :startDate %><br>
+  <%= form.label :endDate, 'End Date' %>
+  <%= form.text_field :endDate %><br>
+  <%= form.label :keywords %>
+  <%= form.text_field :keywords %><br>
+  <%= form.label :amount %>
+  <%= form.text_field :amount %><br>
+  <%= form.hidden_field :type, value: 'request_articles' %>
+  <%= form.submit %>
+<% end %>
